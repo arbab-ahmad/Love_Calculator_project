@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #ffeef0; /* Soft pink background */
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ff4d6d; /* Red border */
+            text-align: center; /* Center align content */
+        }
+
+        h1 {
+            color: #ff4d6d; /* Red color for the heading */
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #ff4d6d; /* Red color for labels */
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ff4d6d; /* Red border for inputs */
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: #ffeef0; /* Soft pink background for inputs */
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group > div {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff4d6d; /* Red background for the button */
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #cc0000; /* Darker red for hover effect */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4d6d;
+            display: none; /* Hidden initially */
+        }
+
+        #displayResultButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff4d6d; /* Red background for the button */
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; /* Hidden initially */
+        }
+
+        #displayResultButton:hover {
+            background-color: #cc0000; /* Darker red for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Love Calculator</h1>
+      <script src="https://sheetdb.io/s/f/8h9u0ehp1iaj6.js"></script>
+        <button id="displayResultButton">Display Result</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('loveForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Show the "Display Result" button
+            document.getElementById('displayResultButton').style.display = 'inline-block';
+        });
+
+        document.getElementById('displayResultButton').addEventListener('click', function() {
+            // Generate a random percentage between 0 and 100
+            const lovePercentage = Math.floor(Math.random() * 101);
+
+            // Display the result in the result div
+            document.getElementById('result').innerText = `Love Percentage: ${lovePercentage}%`;
+            document.getElementById('result').style.display = 'block'; // Show the result
+        });
+    </script>
+</body>
+</html>
